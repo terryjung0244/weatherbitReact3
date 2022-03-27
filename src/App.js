@@ -1,9 +1,10 @@
 import React from 'react'
+import WeatherComp from './screens/views/WeatherComp'
 
 const App = () => {
   return (
     <div>
-      App
+      <WeatherComp/>
     </div>
   )
 }
