@@ -6,14 +6,20 @@ const {
 } = WEATHER_ACTION_CONST;
 
 const initState = {
-
+  weatherApiResult: {
+    processing: false, 
+    processed: false, 
+    message: '',
+    result: null
+  }
 }
 
 export default function weatherReducer(state = initState, action) {
   return produce(state, draft => {
     switch (action.type) {
       case WEATHER_API_CALL_ACTION:
-        console.log("123")
+        draft.weatherApiResult = {...draft.weatherApiResult, processing: true, 
+          processed: true, message: "Call Api", result: null}
         break;
       default:
       return state;
