@@ -13,15 +13,12 @@ const addDelay = () => {
   })
 };
 
+//d46fe6f3b2e44fb8b52873c21312b71f
+//https://api.weatherbit.io/v2.0/current?lat=35.7796&lon=-78.6382&key=API_KEY&include=minutely
 function* getApiResult (action) {
   console.log("456")
-  // yield addDelay();
-  // try {
-
-  // } catch (err) {
-    
-  // }
-}
+  let apiResult = yield fetch(`https://api.weatherbit.io/v2.0/current?city=${}&country=${}&key=d46fe6f3b2e44fb8b52873c21312b71f`)
+  apiResult = yield apiResult.json();
 
 export function* weatherSagaWatcher() {
   yield takeLatest (WEATHER_API_CALL_ACTION, getApiResult)
