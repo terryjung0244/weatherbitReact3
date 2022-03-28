@@ -4,6 +4,7 @@ import { useSelector, useDispatch} from 'react-redux';
 import { 
   weatherReducerWeatherApiCallAction, 
 } from '../reducers/weather/weatherAction'
+import LoadingComponent from './reusable/LoadingComp';
 
 const WeatherComp = () => {
 
@@ -16,6 +17,7 @@ const WeatherComp = () => {
   }
 
   console.log(weatherReducerSelector.weatherApiResult.processing)
+  console.log(weatherReducerSelector.weatherApiResult.result)
 
   return (
     <div>
@@ -27,6 +29,14 @@ const WeatherComp = () => {
           </div>
           )
         })}
+      </div>
+      <div>
+        {(weatherReducerSelector.weatherApiResult.processing === true)
+        ?
+          <LoadingComponent/>
+        :
+          null
+        }
       </div>
     </div>
   )
