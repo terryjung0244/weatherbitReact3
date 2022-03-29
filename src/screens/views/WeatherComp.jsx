@@ -16,6 +16,10 @@ const WeatherComp = () => {
     dispatch(weatherReducerWeatherApiCallAction(city))
   }
 
+  const onClickJph = () => {
+
+  }
+
   console.log(weatherReducerSelector.weatherApiResult.processing)
   console.log(weatherReducerSelector.weatherApiResult.result)
 
@@ -37,6 +41,9 @@ const WeatherComp = () => {
         :
           null
         }
+      </div>
+      <div onClick={onClickJph}>
+        Click Me
       </div>
     </div>
   )
