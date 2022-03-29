@@ -13,6 +13,11 @@ const addDelay = () => {
 
 function* getApiResult (action) {
   console.log("Hello from jphSaga")
+  try {
+
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 export function* jphSagaWatcher() {
