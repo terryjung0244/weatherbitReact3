@@ -42,9 +42,6 @@ const WeatherComp = () => {
           null
         }
       </div>
-      <div onClick={onClickJph}>
-        Click Me
-      </div>
     </div>
   )
 }
