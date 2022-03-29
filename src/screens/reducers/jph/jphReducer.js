@@ -20,11 +20,31 @@ export default function jphReducer(state = initState, action) {
   return produce(state, draft => {
     switch (action.type) {
     case JPH_API_CALL_ACTION:
-      console.log("jphReducer GGAGGUNG")
+      draft.jphApiResult = {
+        ...jphApiResult, 
+        processing: true, 
+        processed: false,
+        message: 'Call Api',
+        result: null
+      }
       break;
     case JPH_API_CALL_ACTION_SUCCESS:
+      draft.jphApiResult = {
+        ...jphApiResult,
+        processing: false, 
+        processed: true, 
+        messaged: 'Successfully called Api',
+        result: action.payload
+      }
       break;
     case JPH_API_CALL_ACTION_FAILURE:
+      draft.jphApiResult = {
+        ...jphApiResult,
+        processing: false, 
+        processed: false, 
+        messaged: 'Unsuccessfully called Api',
+        result: action.payload
+      }
       break;
       default:
       return state;
