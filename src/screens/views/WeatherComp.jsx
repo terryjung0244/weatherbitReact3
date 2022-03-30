@@ -35,12 +35,14 @@ const WeatherComp = () => {
         })}
       </div>
       <div>
-        {(weatherReducerSelector.weatherApiResult.processing === true)
+        {(weatherReducerSelector.weatherApiResult.processing)
         ?
           <LoadingComponent/>
         :
           null
         }
+        
+
       </div>
     </div>
   )
