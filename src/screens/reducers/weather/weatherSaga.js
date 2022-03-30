@@ -21,8 +21,7 @@ function* getApiResult (action) {
   yield addDelay();
 
   try {
-    let apiResult = yield fetch(`https://api.weatherbit.io/v2.0/current?city=${action.payload.cityName}&country=${action.payload.country}&key=d46fe6f3b2e44fb8b52873c21312b71f`)
-    apiResult = yield apiResult.json();
+    
     let organizedData = {
       cityName: apiResult.data[0].city_name,
       countryName: apiResult.data[0].country_code,

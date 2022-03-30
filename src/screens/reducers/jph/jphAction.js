@@ -6,9 +6,9 @@ const {
   JPH_API_CALL_ACTION_SUCCESS
 } = JPH_ACTION_CONST;
 
-export const jphReducerJphApiCallAction = () => {
+export const jphReducerJphApiCallAction = (number) => {
   return {
-    type: JPH_API_CALL_ACTION
+    type: JPH_API_CALL_ACTION, payload: number
   }
 }
 
