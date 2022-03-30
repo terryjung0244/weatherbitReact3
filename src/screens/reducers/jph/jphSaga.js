@@ -1,4 +1,5 @@
 import { takeLatest, put, select, take } from "redux-saga/effects";
+import { getJphApi } from "../../../services/api";
 import { JPH_ACTION_CONST } from "../../../services/const/actionConst";
 import { jphReducerJphApiCallActionSuccess, jphReducerJphApiCallActionFailure } from "./jphAction";
 
@@ -15,13 +16,17 @@ const addDelay = () => {
 function* getApiResult (action) {
   yield addDelay();
   try {
-    let apiResult = yield fetch(`https://jsonplacerholder.typicode.com/todos/${action.payload}`)
-    console.log(apiResult)
+    let apiResult = yield getJphApi(action.payload)
 
-    yield put(jphReducerJphApiCallActionSuccess())
+    let test = yield fetch('~~', {
+      method:'', 
+      body:'',
+    })
+
+    yield put(jphReducerJphApiCallActionSuccess(apiResult))
   } catch (err) {
     // console.log(err)
-    yield put(jphReducerJphApiCallActionFailure())
+    yield put(jphReducerJphApiCallActionFailure(err))
   }
 }
 
