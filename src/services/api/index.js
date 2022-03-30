@@ -16,8 +16,19 @@ export const getWeatherApi = async (param) => {
   
   try {
     let result = await fetchFunc(url, 'GET', null);
-  } catch (err) {
     return result
+  } catch (err) {
+    return err
   }
 }
 
+export const getJphApi = async (param) => {
+  let url = `https://jsonplacerholder.typicode.com/todos/${action.payload}`;
+
+  try {
+    let result = await fetchFunc(url, 'GET', null);
+    return result
+  } catch (err) {
+    return err
+  }
+}
