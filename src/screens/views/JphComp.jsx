@@ -12,6 +12,8 @@ const JphComp = () => {
     dispatch(jphReducerJphApiCallAction())
   }
 
+  console.log(jphReducerSelector.jphApiResult.result)
+
   return (
     <div>
       <div onClick={onClickJph}>

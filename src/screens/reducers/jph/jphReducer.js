@@ -21,7 +21,7 @@ export default function jphReducer(state = initState, action) {
     switch (action.type) {
     case JPH_API_CALL_ACTION:
       draft.jphApiResult = {
-        ...jphApiResult, 
+        ...draft.jphApiResult, 
         processing: true, 
         processed: false,
         message: 'Call Api',
@@ -30,7 +30,7 @@ export default function jphReducer(state = initState, action) {
       break;
     case JPH_API_CALL_ACTION_SUCCESS:
       draft.jphApiResult = {
-        ...jphApiResult,
+        ...draft.jphApiResult,
         processing: false, 
         processed: true, 
         messaged: 'Successfully called Api',
@@ -39,7 +39,7 @@ export default function jphReducer(state = initState, action) {
       break;
     case JPH_API_CALL_ACTION_FAILURE:
       draft.jphApiResult = {
-        ...jphApiResult,
+        ...draft.jphApiResult,
         processing: false, 
         processed: false, 
         messaged: 'Unsuccessfully called Api',
